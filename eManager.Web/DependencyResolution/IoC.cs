@@ -1,3 +1,5 @@
+using eManager.Domain;
+using eManager.Web.Infrastructure;
 using StructureMap;
 namespace eManager.Web {
     public static class IoC {
@@ -9,7 +11,7 @@ namespace eManager.Web {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
                                     });
-            //                x.For<IExample>().Use<Example>();
+                         x.For<IDepartmentDataSource>().Use<DepartmentDb>();
                         });
             return ObjectFactory.Container;
         }
