@@ -15,7 +15,11 @@ namespace eManager.Web
 
             routes.MapRoute(
                 name: "Default",
+
+                // /department/detail/3
                 url: "{controller}/{action}/{id}",
+
+                //deafults in case any of the request is left out
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
