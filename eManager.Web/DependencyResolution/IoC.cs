@@ -11,7 +11,7 @@ namespace eManager.Web {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
                                     });
-                         x.For<IDepartmentDataSource>().Use<DepartmentDb>();
+                         x.For<IDepartmentDataSource>().HttpContextScoped().Use<DepartmentDb>();
                         });
             return ObjectFactory.Container;
         }
