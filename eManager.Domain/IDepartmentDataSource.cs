@@ -11,5 +11,9 @@ namespace eManager.Domain
         IQueryable<Employee> Employees{ get; }
         IQueryable<Department> Departments { get; }
 
+        //adds a Save method 
+
+        void Save();
+
     }
 }

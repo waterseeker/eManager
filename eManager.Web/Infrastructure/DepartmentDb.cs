@@ -18,6 +18,11 @@ namespace eManager.Web.Infrastructure
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
 
+        void IDepartmentDataSource.Save()
+        {
+            SaveChanges(); //this method is already in dbcontext 
+        }
+
         IQueryable<Employee> IDepartmentDataSource.Employees
         {
            get { return Employees; }
